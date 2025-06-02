@@ -40,7 +40,9 @@ const Header = () => {
                 key={item.name}
                 to={item.path}
                 className={`text-gray-700 hover:text-blue-600 transition-colors duration-200 ${
-                  location.pathname === item.path ? "text-blue-600 font-semibold" : ""
+                  location.pathname === item.path
+                    ? "text-blue-600 font-semibold"
+                    : ""
                 }`}
               >
                 {item.name}
@@ -52,7 +54,9 @@ const Header = () => {
                   key={item.name}
                   to={item.path}
                   className={`text-gray-700 hover:text-blue-600 transition-colors duration-200 ${
-                    location.pathname === item.path ? "text-blue-600 font-semibold" : ""
+                    location.pathname === item.path
+                      ? "text-blue-600 font-semibold"
+                      : ""
                   }`}
                 >
                   {item.name}
@@ -95,8 +99,15 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          <button
+            className="md:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </button>
         </div>
 
@@ -109,7 +120,9 @@ const Header = () => {
                   key={item.name}
                   to={item.path}
                   className={`text-gray-700 hover:text-blue-600 transition-colors duration-200 ${
-                    location.pathname === item.path ? "text-blue-600 font-semibold" : ""
+                    location.pathname === item.path
+                      ? "text-blue-600 font-semibold"
+                      : ""
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -122,7 +135,9 @@ const Header = () => {
                     key={item.name}
                     to={item.path}
                     className={`text-gray-700 hover:text-blue-600 transition-colors duration-200 ${
-                      location.pathname === item.path ? "text-blue-600 font-semibold" : ""
+                      location.pathname === item.path
+                        ? "text-blue-600 font-semibold"
+                        : ""
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
