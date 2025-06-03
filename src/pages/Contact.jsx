@@ -142,7 +142,7 @@ const Contact = () => {
                       />
                     </div>
                   </div>
-                  
+
                   <div>
                     <label
                       htmlFor="message"

@@ -22,7 +22,10 @@ const Register = () => {
     setIsLoading(true);
 
     if (formData.password !== formData.confirmPassword) {
-      showAlert("Password Mismatch", "Passwords do not match. Please try again.");
+      showAlert(
+        "Password Mismatch",
+        "Passwords do not match. Please try again."
+      );
       setIsLoading(false);
       return;
     }
@@ -34,7 +37,10 @@ const Register = () => {
       localStorage.setItem("userName", formData.name);
       localStorage.setItem("userType", formData.userType);
 
-      showAlert("Registration Successful", "Welcome to MindCare! Your account has been created.");
+      showAlert(
+        "Registration Successful",
+        "Welcome to MindCare! Your account has been created."
+      );
       navigate("/dashboard");
       setIsLoading(false);
     }, 1000);
@@ -49,15 +55,22 @@ const Register = () => {
       <div className="max-w-2xl w-full bg-white rounded-2xl shadow-xl border border-blue-100 px-8 py-10 sm:px-10">
         <div className="text-center mb-8">
           <Brain className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-          <h1 className="text-3xl font-bold text-gray-900">Join <span className="text-blue-600">MindCare</span></h1>
-          <p className="text-gray-600 mt-2">Create your account to start monitoring your mental well-being.</p>
+          <h1 className="text-3xl font-bold text-gray-900">
+            Join <span className="text-blue-600">MindCare</span>
+          </h1>
+          <p className="text-gray-600 mt-2">
+            Create your account to start monitoring your mental well-being.
+          </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Full Name */}
             <div>
-              <label htmlFor="name" className="flex items-center text-sm font-medium text-gray-700 mb-1">
+              <label
+                htmlFor="name"
+                className="flex items-center text-sm font-medium text-gray-700 mb-1"
+              >
                 <User className="h-4 w-4 mr-2" /> Full Name
               </label>
               <input
@@ -73,7 +86,10 @@ const Register = () => {
 
             {/* Email */}
             <div>
-              <label htmlFor="email" className="flex items-center text-sm font-medium text-gray-700 mb-1">
+              <label
+                htmlFor="email"
+                className="flex items-center text-sm font-medium text-gray-700 mb-1"
+              >
                 <Mail className="h-4 w-4 mr-2" /> Email
               </label>
               <input
@@ -89,7 +105,10 @@ const Register = () => {
 
             {/* Password */}
             <div>
-              <label htmlFor="password" className="flex items-center text-sm font-medium text-gray-700 mb-1">
+              <label
+                htmlFor="password"
+                className="flex items-center text-sm font-medium text-gray-700 mb-1"
+              >
                 <Lock className="h-4 w-4 mr-2" /> Password
               </label>
               <input
@@ -105,14 +124,19 @@ const Register = () => {
 
             {/* Confirm Password */}
             <div>
-              <label htmlFor="confirmPassword" className="flex items-center text-sm font-medium text-gray-700 mb-1">
+              <label
+                htmlFor="confirmPassword"
+                className="flex items-center text-sm font-medium text-gray-700 mb-1"
+              >
                 <Lock className="h-4 w-4 mr-2" /> Confirm Password
               </label>
               <input
                 id="confirmPassword"
                 type="password"
                 value={formData.confirmPassword}
-                onChange={(e) => handleInputChange("confirmPassword", e.target.value)}
+                onChange={(e) =>
+                  handleInputChange("confirmPassword", e.target.value)
+                }
                 placeholder="Confirm password"
                 required
                 className="w-full rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:outline-none"
@@ -122,7 +146,10 @@ const Register = () => {
 
           {/* User Type */}
           <div>
-            <label htmlFor="userType" className="flex items-center text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="userType"
+              className="flex items-center text-sm font-medium text-gray-700 mb-1"
+            >
               <GraduationCap className="h-4 w-4 mr-2" /> User Type
             </label>
             <select
@@ -132,7 +159,9 @@ const Register = () => {
               required
               className="w-full rounded-md border border-gray-300 px-3 py-2 bg-white focus:border-blue-500 focus:ring focus:ring-blue-200 focus:outline-none"
             >
-              <option value="" disabled>Select your category</option>
+              <option value="" disabled>
+                Select your category
+              </option>
               <option value="student">University Student</option>
               <option value="it-professional">IT Professional</option>
               <option value="other">Other</option>
@@ -144,7 +173,9 @@ const Register = () => {
             type="submit"
             disabled={isLoading}
             className={`w-full rounded-md py-2 px-4 text-white font-semibold transition ${
-              isLoading ? "bg-blue-300 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700"
+              isLoading
+                ? "bg-blue-300 cursor-not-allowed"
+                : "bg-blue-600 hover:bg-blue-700"
             } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2`}
           >
             {isLoading ? "Creating Account..." : "Create Account"}
@@ -154,7 +185,10 @@ const Register = () => {
         <div className="mt-6 text-center">
           <p className="text-gray-600">
             Already have an account?{" "}
-            <Link to="/login" className="text-blue-600 hover:text-blue-500 font-medium">
+            <Link
+              to="/login"
+              className="text-blue-600 hover:text-blue-500 font-medium"
+            >
               Sign in here
             </Link>
           </p>

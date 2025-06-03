@@ -9,7 +9,6 @@ import {
   CheckCircle,
 } from "lucide-react";
 
-
 const Heros = () => {
   const features = [
     {
